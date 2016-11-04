@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+<head>
+	<meta http-equiv="Content-Type">
+	<meta content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<title>探店优选</title>
+	<meta name="description" content="探店优选">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="css/animations.css" />
+	<link rel="stylesheet" type="text/css" href="css/load.css" />
+	<script src="js/zepto.min.js"></script>
+</head>
+<body>
+	<div id="loading">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<script>
+  function preloadImg(list,imgs) {
+      var def = $.Deferred(),
+          len = list.length;
+      var list = ["//static.houpix.com/theme/2016/05/discovery/images/1.jpg","//static.houpix.com/theme/2016/05/discovery/images/1.png","//static.houpix.com/theme/2016/05/discovery/images/1.png", "//static.houpix.com/theme/2016/05/discovery/images/4.png", "//static.houpix.com/theme/2016/05/discovery/images/5.png","//static.houpix.com/theme/2016/05/discovery/images/6.png", "//static.houpix.com/theme/2016/05/discovery/images/8.png", "//static.houpix.com/theme/2016/05/discovery/images/9.png","//static.houpix.com/theme/2016/05/discovery/images/10.png", "//static.houpix.com/theme/2016/05/discovery/images/12.png", "//static.houpix.com/theme/2016/05/discovery/images/13.png","//static.houpix.com/theme/2016/05/discovery/images/14.png", "//static.houpix.com/theme/2016/05/discovery/images/15.png", "//static.houpix.com/theme/2016/05/discovery/images/1.jpg","//static.houpix.com/theme/2016/05/discovery/images/btn.png"],    //此处省略一万个字符
+      imgs = [];
+      $(list).each(function(i,e) {
+          var img = new Image();
+          img.src = e;
+          if(img.complete) {
+              imgs[i] = img;
+              len--;
+              if(len == 0) {
+                  def.resolve();
+              }
+          }
+          else {
+              img.onload = (function(j) {
+                  return function() {
+                      imgs[j] = img
+                      len--;
+                      if(len == 0) {
+                          def.resolve();
+                      }
+                  };
+              })(i);
+              img.onerror = function() {
+                  len--;
+                  // console.log('fail to load image');
+              };
+          }
+      });
+      return def.promise();
+  }
+
+  $.when(preloadImg(list,imgs)).done(
+      function() {
+          //预加载结束
+          //do something here
+          // console.log("done");
+          // $("img").attr("src","//static.houpix.com/theme/2016/05/discovery/images/1.jpg");
+      }
+  );
+</script>
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-current" id="array">
+			<div class="wrap">
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-2-1 hide">
+			<div class="wrap">
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-3-1 hide">
+			<div class="wrap">
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-4-1 hide">
+			<div class="wrap">
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-5-1 hide">
+			<div class="wrap">
+				<img src="images/0.png" class="end" alt="">
+				<div class="store">
+					<p>分享一下我们的部分买手在当地的生活美照</p>
+					<p>以及他们的店铺链接</p>
+					<p>就是这些可爱的小蜜蜂们，为大家辛苦奔波</p>
+					<p>将全球最好的家居用品带给大家！</p>
+				</div>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-6-1 hide">
+			<div class="wrap">
+				<img src="images/1.png" class="people1" alt="">
+				<p class="name1">kp使者</p>
+				<p class="under"> <em class="underline"></em>
+				</p>
+				<p class="name1 name3">美国Pottery Barn-澳洲发货</p>
+				<div class="name1 name4">
+					<p>向往品质家居生活，</p>
+					<p>带你了解美国中高端家居品牌Pottery Barn。</p>
+				</div>
+				<a href="http://www.houpix.com/h5/mall/shop/233">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-7-1 hide">
+			<div class="wrap">
+				<img src="images/15.png" class="people1" alt="">
+				<p class="name1">丁丁</p>
+				<p class="under"> <em class="underline"></em>
+				</p>
+				<p class="name1 name3">法国Pylones-法国发货</p>
+				<div class="name1 name4">
+					<p>为您挖掘浪漫国度法国的浪漫家居，创意，设计，</p>
+					<p>让你的生活多姿多彩，从此不同！</p>
+				</div>
+				<a href="http://www.houpix.com/h5/mall/shop/270">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-8-1 hide">
+			<div class="wrap">
+				<img src="images/6.png" class="people1" alt="">
+				<p class="name1">Uncle Huang</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">德国菲仕乐(Fissler)-德国发货</p>
+				<div class="name1 name4">
+					<p>推荐给广大烹饪爱好者，好炊具出好菜品，</p>
+					<p>带你去看看德国菲仕乐(Fissler)。</p>
+				</div>
+				<a href="http://www.houpix.com/h5/mall/shop/272">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-9-1 hide">
+			<div class="wrap">
+				<img src="images/1.png" class="people1" alt="">
+				<p class="name1">kp使者</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">澳洲SHERIDAN家纺-澳洲发货</p>
+				<div class="name1 name4">
+					<p>居家生活中最重要的部分就是家纺，</p>
+					<p>我喜欢澳洲SHERIDAN家纺，不仅仅是品质，</p>
+					<p>更是一种舒适，诚意推荐。</p>
+				</div>
+				<a href="http://www.houpix.com/h5/mall/shop/277">
+					<img src="images/btn.png" alt="" class="btn btn1"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-10-1 hide">
+			<div class="wrap">
+				<img src="images/4.png" class="people1" alt="">
+				<p class="name1">阿呆</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">美国West elm-美国发货</p>
+				<p class="name1 name4">
+					推荐年轻人钟爱的家居品牌West elm，
+					<br/>
+					时尚、简洁、实用，不要错过。
+				</p>
+				<a href="http://www.houpix.com/h5/mall/shop/271">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-11-1 hide">
+			<div class="wrap">
+				<img src="images/5.png" class="people1" alt="">
+				<p class="name1">Ageha</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">美国Crate&Barrel-加拿大发货</p>
+				<p class="name1 name4">
+					对美式家居略知一二的朋友，想必一定知道
+					<br>
+					Crate&Barrel，它不单单只是高大上的家居品牌，
+					<br>更是一种生活态度。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/232">
+					<img src="images/btn.png" alt="" class="btn btn1"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-12-1 hide">
+			<div class="wrap">
+				<img src="images/6.png" class="people1" alt="">
+				<p class="name1">Uncle Huang</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">德国Le creuset-德国发货</p>
+				<p class="name1 name4">
+					厨房里始终需要配一套好的锅具，那么，
+					<br>
+					我只需要给你推荐德国Le creuset，
+					<br>就能满足你的所有需求。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/273">
+					<img src="images/btn.png" alt="" class="btn btn1"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-13-1 hide">
+			<div class="wrap">
+				<img src="images/8.png" class="people1" alt="">
+				<p class="name1">镜狸</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">德国Magazin-德国发货</p>
+				<p class="name1 name4">
+					爱逛街，更爱生活，
+					<br>
+					严谨严肃的德国人却有你想不到的生活方式。
+					<br>
+					为大家推荐德国Magazin，
+					<br>设计品质趣味为一体的家居集合店。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/284">
+					<img src="images/btn.png" alt="" class="btn btn2"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-14-1 hide">
+			<div class="wrap">
+				<img src="images/9.png" class="people1" alt="">
+				<p class="name1">優希</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">日本代购店</p>
+				<p class="name1 name4">
+					生活在日本，孩子就是我的全部。
+					<br>
+					我将发现一切优质的儿童用品，
+					<br>丰富孩子的童年。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/275">
+					<img src="images/btn.png" alt="" class="btn btn1"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-15-1 hide">
+			<div class="wrap">
+				<img src="images/10.png" class="people1" alt="">
+				<p class="name1">Shina</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">日本代购店</p>
+				<p class="name1 name4">
+					爱逛街，爱晒照，发现日本的品质小物，
+					<br>为您推荐优质日货。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/269">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-16-1 hide">
+			<div class="wrap">
+				<img src="images/11.png" class="people1" alt="">
+				<p class="name1">修菱</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">韩国代购店</p>
+				<p class="name1 name4">
+					在韩国，不单单只有帅哥、美女和化妆品，
+					<br>这里的家居好物也是非常有名，为大家淘好货哦。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/205">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-17-1 hide">
+			<div class="wrap">
+				<img src="images/12.png" class="people1" alt="">
+				<p class="name1">挚爱西娜</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">丹麦Bahne - 丹麦发货</p>
+				<p class="name1 name4">
+					在丹麦为您推荐Bahne品牌，典型北欧风格，
+					<br>
+					总有一款适合你，
+					<br>Instgram网红家居用品将近在咫尺。</p>
+				<a href="http://www.houpix.com/h5/mall/shop/278">
+					<img src="images/btn.png" alt="" class="btn btn1"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+
+		<div class="page page-18-1 hide">
+			<div class="wrap">
+				<img src="images/13.png" class="people1" alt="">
+				<p class="name1">Leo Xu</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">意大利Bialetti咖啡壶-意大利发货</p>
+				<p class="name1 name4">
+					为你全面解析意大利经典咖啡壶品牌Bialetti，
+					<br/>
+					更多限量精品请关注我。
+				</p>
+				<a href="http://www.houpix.com/h5/mall/shop/279">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-19-1 hide">
+			<div class="wrap">
+				<img src="images/14.png" class="people1" alt="">
+				<p class="name1">马代欧</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">意大利代购店</p>
+				<p class="name1 name4">
+					专业意大利代购，为大家发现意大利各种高大上的
+					<br/>
+					好物，把最好的品质生活分享给大家。
+				</p>
+				<a href="http://www.houpix.com/h5/mall/shop/285">
+					<img src="images/btn.png" alt="" class="btn"></a>
+				<img class="img_3 pt-page-moveIconUp" src="images/icon_up.png"></div>
+		</div>
+		<div class="page page-20-1 hide"> 
+			<div class="wrap">
+				<img src="images/1.png" class="people1" alt="">
+				<p class="name1">kp使者</p>
+				<p class="under">
+					<em class="underline"></em>
+				</p>
+				<p class="name1 name3">美国Williams Sonoma-澳洲发货</p>
+				<p class="name1 name4">
+					如果你喜欢烹饪，那么就不要错过这些厨房用具，
+					<br/>
+					有你需要的，更有你想不到的。
+				</p>
+				<a href="http://www.houpix.com/h5/mall/shop/249">
+					<img src="images/btn.png" alt="" class="btn"></a>
+			</div>
+		</div>
+	</div>
+	<script src="js/touch.js"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript">
+		document.onreadystatechange = loading; 
+		function loading(){
+			if(document.readyState == "complete")
+			{ 
+				$("#loading").hide();
+				$("#content").show();
+				playbksound();
+			}
+		}
+	</script>
+<script>
+	var link = document.getElementsByTagName('a');
+	  if(navigator.userAgent.indexOf("yuyue") > 0 || navigator.userAgent.indexOf("houpixapp") > 0){
+	    var platformType = 1; // app
+	  }else if(navigator.userAgent.indexOf("MicroMessenger")>0 || navigator.userAgent.indexOf("weibo")>0 || navigator.userAgent.indexOf("Weibo")>0){
+	    var platformType = 2; // 寰俊锛屽井鍗�
+	  }else{
+	    var platformType = 3; // 娴忚鍣�
+	  }
+
+	  for(var i=0; i<link.length; i++){
+
+	    if(link[i].href.indexOf("http") == 0 ){
+	      if(platformType == 1){
+	        links = encodeURIComponent(link[i].href);
+	        link[i].href = "houpixapp://webview/"+links;
+	      }else if(platformType == 2){
+	        link[i].onclick = function(e){
+	          e.stopPropagation();
+	        }
+	      }
+    }
+</script>
+</body>
+</html>

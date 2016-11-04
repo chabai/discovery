@@ -1,0 +1,122 @@
+#loading{
+	width:60px; height:60px; position:absolute; top:50%; left:50%; margin-top:-30px; margin-left:-30px;
+}
+.spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+}
+ 
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #67CF22;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+   
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+ 
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/* 新增样式 */
+a, abbr, acronym, address, applet, article, aside, audio, b, blockquote, big, body, center, canvas, caption, cite, code, command, datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption, figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, keygen, label, legend, li, meter, nav, menu, object, ol, output, p, pre, progress, q, s, samp, section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot, thead, th, tr, tdvideo, tt, u, ul, var {
+  margin: 0;
+  padding: 0;
+}
+body, input, button, select, textarea, sub {
+  font-family: "微软雅黑";
+}
+em, cite, address, optgroup {
+  font-style: normal;
+}
+.people1{
+  width: 30%;
+  position: absolute;
+  top: 23%;
+  left: 35%;
+}
+.end{
+  width: 28%;
+  position: absolute;
+  top: 32%;
+  left: 36%;
+}
+.store{
+  width: 100%;
+  position: absolute;
+  top: 43%;
+  color: #FDFAF3;
+}
+.store p{
+  text-align: center;
+  font-size: 16px;
+  line-height: 2;
+}
+.name1{
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  text-align: center;
+  font-size: 20px;
+  color: #FDFAF3;
+}
+.name2{
+  top: 48%;
+}
+.name3{
+  top: 53%;
+  font-size: 16px;
+  color: #F2ECDF;
+}
+.name4{
+  width: 100%;
+  top: 58%;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #F2ECDF;
+}
+.btn{
+  width: 24%;
+  position: absolute;
+  top: 70%;
+  left: 38%;
+}
+.btn1{
+  top: 72%;
+}
+.btn2{
+  top: 75%;
+}
+.under{
+  width: 100%;
+  position: absolute;
+  top: 51%;
+}
+.underline{
+  display: block;
+  width: 6%;
+  margin:0 auto;
+  border-bottom: 1px solid #DBC9B1;
+}
